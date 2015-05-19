@@ -3,7 +3,7 @@
   <display-name>twilio</display-name>
     <servlet>
         <servlet-name>TwilioSmsServlet</servlet-name>
-        <servlet-class>com.speaktoit.twilio.TwilioSmsServlet</servlet-class>
+        <servlet-class>ai.api.twilio.TwilioSmsServlet</servlet-class>
     </servlet>
  
     <servlet-mapping>
