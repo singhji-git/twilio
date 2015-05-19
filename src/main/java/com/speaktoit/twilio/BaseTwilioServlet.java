@@ -24,11 +24,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Strings;
-import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 
+/**
+ * BaseTwilioServlet. Encapsulates methods to communicate with api.ai.
+ */
 public class BaseTwilioServlet extends HttpServlet {
 	private static final long serialVersionUID = -8510776154233631616L;
 	private static final CloseableHttpClient POOLING_HTTP_CLIENT;
@@ -45,6 +47,14 @@ public class BaseTwilioServlet extends HttpServlet {
 				.setConnectionManager(POOLING_HTTP_CONN_MANAGER).build();
 	}
 
+	/**
+	 * Send request to api.ai
+	 * 
+	 * @param query
+	 * @param parameters
+	 *            - parameters received from www.twilio.com
+	 * @return response from api.ai
+	 */
 	protected String sendRequestToApiAi(String query, Map<String, String[]> parameters) {
 		HttpResponse response = null;
 		try {
@@ -89,6 +99,14 @@ public class BaseTwilioServlet extends HttpServlet {
 		}
 	}
 
+	/**
+	 * Create request to api.ai
+	 * 
+	 * @param query
+	 * @param parameters
+	 *            - parameters received from www.twilio.com
+	 * @return request to api.ai
+	 */
 	protected String createApiRequest(String query, Map<String, String[]> parameters) {
 		ApiRequest req = new ApiRequest();
 		req.lang = "en";

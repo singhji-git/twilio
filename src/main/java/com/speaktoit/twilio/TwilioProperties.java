@@ -6,6 +6,9 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Twilio properties
+ */
 public final class TwilioProperties {
 	private static final Logger LOGGER = LoggerFactory.getLogger(TwilioProperties.class);
 	private static final String TWILIO_PROP_NAME = "twilio.properties";
@@ -27,14 +30,29 @@ public final class TwilioProperties {
 		return properties.getProperty(name);
 	}
 
+	/**
+	 * Url to api.ai server
+	 * 
+	 * @return
+	 */
 	public String getApiUrl() {
 		return get("apiai.url");
 	}
 
+	/**
+	 * api.ai user access token
+	 * 
+	 * @return
+	 */
 	public String getApiAccessToken() {
 		return get("apiai.accessToken");
 	}
 
+	/**
+	 * Timezone for api.ai requests
+	 * 
+	 * @return
+	 */
 	public String getTimezone() {
 		return properties.getProperty("apiai.timezone", "-0700");
 	}
