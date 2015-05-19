@@ -47,6 +47,15 @@ public final class TwilioProperties {
 	public String getApiAccessToken() {
 		return get("apiai.accessToken");
 	}
+	
+	/**
+	 * api.ai user subscription key
+	 * 
+	 * @return
+	 */
+	public String getApiSubscriptionKey() {
+		return get("apiai.subscriptionKey");
+	}
 
 	/**
 	 * Timezone for api.ai requests
