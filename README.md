@@ -6,7 +6,6 @@ Sample agent to integrate [Api.ai](http://api.ai) with [Twilio SMS](https://twil
 Insert API key to the configuration file: src/main/resources/twilio.properties:
 ```
 apiai.accessToken=<YOUR_CLIENT_ACCESS_TOKEN>
-apiai.subscriptionKey=<YOUR_SUBSCRIPTION_KEY>
 ```
 
 Run maven build:
