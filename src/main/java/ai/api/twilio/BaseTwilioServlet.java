@@ -83,7 +83,6 @@ public class BaseTwilioServlet extends HttpServlet {
 
 			response = POOLING_HTTP_CLIENT.execute(RequestBuilder.post().setUri(TwilioProperties.INSTANCE.getApiUrl())
 					.addHeader("Authorization", "Bearer " + TwilioProperties.INSTANCE.getApiAccessToken())
-					.addHeader("ocp-apim-subscription-key",  TwilioProperties.INSTANCE.getApiSubscriptionKey())
 					.addHeader("Accept", ContentType.APPLICATION_JSON.getMimeType()).setEntity(input).build());
 
 			if (response.getStatusLine().getStatusCode() / 100 != 2) {
